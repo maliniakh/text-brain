@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Neural Network</title>
+	<link rel="stylesheet" href="css/app.css"/>
+
+</head>
+<body>
+
+	<div id="loading">
+		<div class="spinner">
+			<div class="rect1"></div>
+			<div class="rect2"></div>
+			<div class="rect3"></div>
+			<div class="rect4"></div>
+			<div class="rect5"></div>
+		</div>
+	</div>
+
+	<div id="about"><a target="_blank" href="https://github.com/nxxcxx/Neural-Network">github</a></div>
+
+	<div id="canvas-container"></div>
+
+
+	<script type="x-shader/x-vertex" id="vertexshader-axon">
+
+
+		uniform float opacityMultiplier;
+
+		attribute float opacityAttr;
+		
+		varying float opacityNew;
+
+		void main() {
+
+			opacityNew = opacityAttr * opacityMultiplier;
+
+			gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0 );
+
+		}
+
+	</script>
+
+	<script type="x-shader/x-fragment" id="fragmentshader-axon">
+
+		uniform vec3 color;
+
+		varying float opacityNew;
+		
+		void main() {
+			gl_FragColor = vec4(color, opacityNew);
+		}
+
+	</script>
+
+	<script src="js/vendor/Detector.js"></script>
+	<script src="js/vendor/dat.gui.min.js"></script>
+	<script src="js/vendor/stats.min.js"></script>
+	<script src="js/vendor/three.min.js"></script>
+	<script src="js/vendor/OrbitControls.js"></script>
+    <script src="js/vendor/utf8_encode.js"></script>
+    <script src="js/vendor/md5.js"></script>
+
+    <script src="fonts/gentilis_bold.typeface.js"></script>
+    <script src="fonts/gentilis_regular.typeface.js"></script>
+    <script src="fonts/optimer_bold.typeface.js"></script>
+    <script src="fonts/optimer_regular.typeface.js"></script>
+    <script src="fonts/helvetiker_bold.typeface.js"></script>
+    <script src="fonts/helvetiker_regular.typeface.js"></script>
+    <script src="fonts/droid/droid_sans_regular.typeface.js"></script>
+    <script src="fonts/droid/droid_sans_bold.typeface.js"></script>
+    <script src="fonts/droid/droid_serif_regular.typeface.js"></script>
+    <script src="fonts/droid/droid_serif_bold.typeface.js"></script>
+	<script src="js/three-app.js"></script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
