@@ -427,10 +427,10 @@
         var currentTime = Date.now();
 
         // random fire
-        if(THREE.Math.randInt(0,  480) == 0) {
+        if(THREE.Math.randInt(0, 60) == 0) {
             this.releaseSignalAt(this.allNeurons[THREE.Math.randInt(0, this.allNeurons.length)]);
         }
-        this.releaseSignalAt(this.allNeurons[THREE.Math.randInt(0, this.allNeurons.length)]);
+//        this.releaseSignalAt(this.allNeurons[THREE.Math.randInt(0, this.allNeurons.length)]);
 
         // update neurons state and release signal
         for (ii = 0; ii < this.allNeurons.length; ii++) {
