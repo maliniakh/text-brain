@@ -269,8 +269,8 @@
         this.limitSignals = 12000;
         this.particlePool = new ParticlePool(this.limitSignals);	// *************** ParticlePool must bigger than limit Signal ************
 
-        this.signalMinSpeed = 0.035;
-        this.signalMaxSpeed = 0.065;
+        this.signalMinSpeed = 0.015;
+        this.signalMaxSpeed = 0.045;
 
         // NN component containers
         this.allNeurons = [];
